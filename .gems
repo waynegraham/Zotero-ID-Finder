@@ -1,0 +1,4 @@
+haml --version '>= 2.2.0'
+nokogiri
+open-uri
+haml

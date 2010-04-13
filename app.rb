@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'sinatra'
+require 'nokogiri'
+require 'open-uri'
+
 
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
@@ -12,7 +15,8 @@ error do
 end
 
 get '/' do
-  haml :root
+  
+  "hi"
 end
 
 # get '/env' do
