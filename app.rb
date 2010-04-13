@@ -22,3 +22,15 @@ end
 get '/' do
   haml :root
 end
+
+post '/' do
+  doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
+  @id = doc.to_s[/[0-9]+/]
+  haml :result
+end
+
+get '/:username' do
+    doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
+    @id = doc.to_s[/[0-9]+/]
+    haml :result
+end

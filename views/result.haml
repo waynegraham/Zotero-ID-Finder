@@ -3,12 +3,12 @@
 %p 
 	%form{:id => 'finder', :method => 'post'}
 		%label{:for => 'username'} Zotero Username:
-		%input{:type => 'text', :id => 'username', :name => 'username'}
+		%input{:type => 'text', :id => 'username', :name => 'username', :value => "#{params[:username]}"}
 		
 		%input{:type => 'submit', :id => "search", :value => 'Find Zotero ID'}
 
+%p#result= "Your Zotero User ID: #{@id}"
 
-		
 %h2 Ways to use your id
 
 %ul

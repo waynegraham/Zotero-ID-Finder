@@ -8,6 +8,7 @@ configure do
   SiteConfig = OpenStruct.new(
                  :title => 'Zotero ID Finder',
                  :author => 'Scholars\' Lab ',
+                 :author_url => 'http://www.scholarslab.org',
                  :url_base => 'http://localhost:4567/'
                )
                
