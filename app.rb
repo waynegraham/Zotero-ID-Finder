@@ -15,7 +15,8 @@ error do
 end
 
 helpers do
-  # add your helpers here
+  include Rack::Utils
+  alias_method :h, :escape_html
 end
 
 # root page
@@ -24,13 +25,21 @@ get '/' do
 end
 
 post '/' do
-  doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
-  @id = doc.to_s[/[0-9]+/]
+  begin
+    doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
+    @id = doc.to_s[/[0-9]+/]
+  rescue
+    @id = "Not found"
+  end
   haml :result
 end
 
 get '/:username' do
+  begin
     doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
     @id = doc.to_s[/[0-9]+/]
+  rescue
+    @id = "Not found"
+  end
     haml :result
 end
