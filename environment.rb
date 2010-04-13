@@ -7,7 +7,7 @@ require 'sinatra' unless defined?(Sinatra)
 configure do
   SiteConfig = OpenStruct.new(
                  :title => 'Zotero ID Finder',
-                 :author => 'Wayne Graham',
+                 :author => 'Scholars\' Lab ',
                  :url_base => 'http://localhost:4567/'
                )
                

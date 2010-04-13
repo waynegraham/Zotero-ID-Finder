@@ -1,3 +1,16 @@
-%h2 Main Page
+%p Use this tool to find your Zotero user id. Just enter the username and it'll find the number for you. This is useful for the various API libraries for Zotero.
 
-%p This is where the form will be
+%p 
+	%form{:id => 'finder'}
+		%label{:for => 'username'} Zotero Username:
+		%input{:type => 'text', :id => 'username', :name => 'username'}
+		
+		%input{:type => 'submit', :value => 'Find Zotero ID'}
+		
+%h2 Ways to use your id
+
+%ul
+	%li
+		%a{:href => "http://rubygems.org/gems/rzotero"} rzotero
+	%li
+		%a{:href => "http://github.com/clioweb/phpZotero"} phpZotero

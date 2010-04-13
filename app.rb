@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'sinatra'
+require 'environment'
 require 'nokogiri'
 require 'open-uri'
-
 
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
@@ -14,11 +14,11 @@ error do
   'Application error'
 end
 
-get '/' do
-  
-  "hi"
+helpers do
+  # add your helpers here
 end
 
-# get '/env' do
-#   ENV.inspect
-# end
+# root page
+get '/' do
+  haml :root
+end
