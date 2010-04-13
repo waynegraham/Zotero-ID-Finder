@@ -16,7 +16,7 @@ end
 namespace :gems do
   desc 'Install required gems'
   task :install do
-    required_gems = %w{ sinatra rspec haml }
+    required_gems = %w{ sinatra rspec haml rack-test }
     required_gems.each { |required_gem| system "gem install #{required_gem}" }
   end
 end
