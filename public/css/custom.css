@@ -27,6 +27,7 @@ body{
 
 label {
 	color: #990000;
+	font-size: large;
 }
 
 input#username {
@@ -39,5 +40,14 @@ input#username {
 	border: 1px solid #ddd;
 	margin: 20px 0 30px;
 	padding: 5px 10px;
+}
+
+h2 {
+	clear: both;
+	color: #777;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 9px;
+	padding-bottom: 8px;
 }
 
