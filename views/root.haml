@@ -1,10 +1,9 @@
-%p Use this tool to find your Zotero user id. Just enter the username and it'll find the number for you. This is useful for the various API libraries for Zotero.
-
 %p 
 	%form{:id => 'finder', :method => 'post'}
+		
 		%label{:for => 'username'} Zotero Username:
 		%input{:type => 'text', :id => 'username', :name => 'username'}
-		
+	
 		%input{:type => 'submit', :id => "search", :value => 'Find Zotero ID'}
 
 

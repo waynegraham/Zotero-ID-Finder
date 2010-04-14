@@ -1,9 +1,37 @@
+body{
+	background-color: #D5D5D5;
+}
 
+#header, #footer {
+	width:635px;
+	margin: 0 auto;
+}
+
+.container {
+	background-color: #fff;
+	padding: 15px;
+	width: 635px;
+}
+
+.banner {
+	font-size: 18px;
+	line-height: 36px;
+	margin-bottom: 18px;
+}
 
 #finder {
-	background-color: #ffffcc;
+	background-color: #f3f3f3;
 	margin: 25px 0 10px;
 	padding: 10px;
+}
+
+label {
+	color: #990000;
+}
+
+input#username {
+	width: 225px;
+	font-size: 125%;
 }
 
 #result {
@@ -12,3 +40,4 @@
 	margin: 20px 0 30px;
 	padding: 5px 10px;
 }
+
