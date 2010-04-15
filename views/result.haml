@@ -2,3 +2,6 @@
 %p#result 
 	Your Zotero User ID:
 	%strong= "#{h @id}"
+	(
+	%a{:href => "/#{h params[:username]}"} json output 
+	)
