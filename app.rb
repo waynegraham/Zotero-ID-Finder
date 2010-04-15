@@ -3,6 +3,7 @@ require 'sinatra'
 require 'environment'
 require 'nokogiri'
 require 'open-uri'
+require 'json'
 
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
@@ -25,21 +26,27 @@ get '/' do
 end
 
 post '/' do
-  begin
-    doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
-    @id = doc.to_s[/[0-9]+/]
-  rescue
-    @id = "Not found"
-  end
+    
+  @id = get_user(params[:username])
+  
   haml :result
 end
 
 get '/:username' do
+ 
+  @id = get_user(params[:username])
+   
+  content_type :json
+  
+  {:username => params[:username], :id => @id}
+end
+
+# convenience method to get user 
+def get_user(username)
   begin
     doc = Nokogiri.parse(open("http://www.zotero.org/api/users/#{params[:username]}")).xpath("//id")
-    @id = doc.to_s[/[0-9]+/]
+    return doc.to_s[/[0-9]+/]
   rescue
-    @id = "Not found"
+    return 'Not Found'
   end
-    haml :result
 end
