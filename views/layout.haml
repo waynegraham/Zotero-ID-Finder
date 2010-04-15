@@ -13,16 +13,34 @@
 		%script{:type => "text/javascript", :src => "/javascripts/application.js"}
 	%body{:class => 'blueprint'}
 		#header
-			%h1= "#{SiteConfig.title}"
-	
+			/ %h1= "#{SiteConfig.title}"
+			%img{:src=> '/images/zotero_logo.png', :title => SiteConfig.title}
+			%p= SiteConfig.title
 		.container
 			
 			%p.banner Use this tool to find your Zotero user id. Just enter the username and it'll find the number for you. This is useful for the various API libraries for Zotero.
 			
-			#content= yield
-		#footer
 			%p 
-				%a{:href => "http://jigsaw.w3.org/css-validator/check/referer"} CSS 
+				%form{:id => 'finder', :method => 'post'}
+					%label{:for => 'username'} Zotero Username:
+					%input{:type => 'text', :id => 'username', :class => 'input', :name => 'username', :value => "#{params[:username]}"}
+
+					%input{:type => 'submit', :id => "search", :class => 'button', :value => 'Find Zotero ID'}
+			
+			#content= yield
+			
+			%h2.center Ways to use your id
+
+			%ul
+				%li
+					%a{:href => "http://rubygems.org/gems/rzotero"} rzotero
+					.dt Ruby gem for Zotero API
+				%li
+					%a{:href => "http://github.com/clioweb/phpZotero"} phpZotero
+					.dt PHP library for Zotero API
+		#footer
+			%p.center 
+				%a{:href => "http://www.zotero.org/getinvolved/"} Get Involved 
 				= " | "
 				%a{:href => "http://www.zotero.org"} Zotero 
 				="| &copy; #{Time.now.strftime('%Y')}"

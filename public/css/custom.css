@@ -5,6 +5,21 @@ body{
 #header, #footer {
 	width:635px;
 	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#footer a, #footer a:visited {
+	color: #770000;
+}
+
+#header {
+	
+	margin-bottom: 20px;
+}
+
+#header p {
+	min-height: 1em;
+	font-size: 1.2em;
 }
 
 .container {
@@ -28,19 +43,47 @@ body{
 label {
 	color: #990000;
 	font-size: large;
+	display: block;
+	width: 200px;
+	float: left;
+	margin: 2px 4px 6px 4px;
+}
+
+.button {
+	border: 1px solid #006;
+	background-color: #7A0000;
+	font-size: 125%;
+	color: #fff;
+	cursor: pointer;
+	margin-left: 15px;
 }
 
 input#username {
 	width: 225px;
 	font-size: 125%;
+	background: #ffc;
+	border: 1px solid #006;
+}
+
+input#username:hover{
+	border: 1px solid #f00;
+	background: #ff6;
 }
 
 #result {
-	background-color: #eee;
-	border: 1px solid #ddd;
-	margin: 20px 0 30px;
-	padding: 5px 10px;
+	-moz-border-radius: 12px 12px 12px 12px;
+	background-color: #FFFFE0;
+	border: 1px solid #ffda5b;
+	margin-bottom: 25px;
+	padding: 20px;
+	font-size: 125%;
+	/*background-color: #eee;
+		border: 1px solid #ddd;
+		margin: 20px 0 30px;
+		padding: 5px 10px;*/
 }
+
+
 
 h2 {
 	clear: both;
@@ -51,3 +94,41 @@ h2 {
 	padding-bottom: 8px;
 }
 
+.center { text-align: center;}
+
+ul {
+	-moz-box-shadow: 1px 1px 0 white inset, 0 0 2px white;
+	background-color: #f5f5f5;
+	border: 1px solid #e0e0e0;
+	color: #666;
+	font-size: 26px;
+	padding: 10px;
+	text-shadow: 1px 1px 0 white;
+	margin: 0 auto;
+	width: 280px;
+}
+
+li {
+	-moz-box-shadow:1px 1px 0 white inset, 0 0 2px white;
+	background-color: #fafafa;
+	border-color: #eaeaea #eaeaea -moz-use-text-color;
+	border-style: solid solid none;
+	border-width: 1px 1px medium;
+	list-style: none outside none;
+	padding: 12px;
+}
+
+li a, li a:visited {
+	color: #990000;
+}
+
+li a:visited {
+	outline: medium none;
+	text-decoration: none;
+}
+
+.dt {
+	color: #888;
+	font-size: 12px;
+	padding-top: 10px;
+}

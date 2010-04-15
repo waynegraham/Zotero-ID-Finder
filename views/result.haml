@@ -1,16 +1,4 @@
-%p 
-	%form{:id => 'finder', :method => 'post'}
-		%label{:for => 'username'} Zotero Username:
-		%input{:type => 'text', :id => 'username', :name => 'username', :value => "#{params[:username]}"}
-		
-		%input{:type => 'submit', :id => "search", :value => 'Find Zotero ID'}
 
-%p#result= "Your Zotero User ID: #{h @id}"
-
-%h2 Ways to use your id
-
-%ul
-	%li
-		%a{:href => "http://rubygems.org/gems/rzotero"} rzotero
-	%li
-		%a{:href => "http://github.com/clioweb/phpZotero"} phpZotero
+%p#result 
+	Your Zotero User ID:
+	%strong= "#{h @id}"
