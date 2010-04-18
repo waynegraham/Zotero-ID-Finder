@@ -37,7 +37,6 @@ get '/:username' do
   @id = get_user(params[:username])
    
   content_type :json
-  
   {:username => params[:username], :id => @id}.to_json
 end
 
