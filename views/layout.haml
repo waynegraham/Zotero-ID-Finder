@@ -13,9 +13,9 @@
 		%script{:type => "text/javascript", :src => "/javascripts/application.js"}
 	%body{:class => 'blueprint'}
 		#header
-			/ %h1= "#{SiteConfig.title}"
-			%img{:src=> '/images/zotero_logo.png', :title => SiteConfig.title}
-			%p= SiteConfig.title
+			%a{:href => '/'}
+				%img{:src=> '/images/zotero_logo.png', :title => SiteConfig.title}
+				%p= SiteConfig.title
 		.container
 			
 			%p.banner Use this tool to find your Zotero user id. Just enter the username and it'll find the number for you. This is useful for the various API libraries for Zotero.

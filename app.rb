@@ -26,18 +26,13 @@ get '/' do
 end
 
 post '/' do
-    
   @id = get_user(params[:username])
-  
   haml :result
 end
 
-get '/:username' do
- 
-  @id = get_user(params[:username])
-   
-  content_type :json
-  {:username => params[:username], :id => @id}.to_json
+get '/:username' do  
+  content_type "application/json"
+  {:username => params[:username], :id => get_user(params[:username])}.to_json
 end
 
 # convenience method to get user 
